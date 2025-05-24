@@ -4,60 +4,60 @@
   .listagem {
     display: flex;
     justify-content: space-between;
-
     flex-wrap: wrap;
-
     padding: rem-calc(20) 0;
+
     .pokemon {
-      display: flex;
-
       position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
-      margin-bottom: rem-calc(20);
       width: calc(49% - 2.5rem);
-      height: rem-calc(157-40);
-
-      background: var(--white);
+      height: rem-calc(117);
+      margin-bottom: rem-calc(20);
       padding: rem-calc(20);
+      background-color: var(--white);
       border-radius: rem-calc(10);
-
       text-decoration: none;
-      color: var(--primary-color);
+      color: var(--orange);
+      overflow: hidden;
+      transition: background-color 0.3s ease-in-out;
 
       &__status {
+        transition: opacity 0.3s ease-in-out;
+
         h2 {
           font-size: rem-calc(22);
           font-style: italic;
-          font-weight: 700;
-          margin-bottom: rem-calc(10);
-
+          font-weight: 900;
+          margin-bottom: rem-calc(30);
           text-transform: capitalize;
         }
 
         ul {
           display: flex;
           flex-direction: column;
+          gap: rem-calc(10);
 
           li {
-            background: var(--gray);
-            font-size: rem-calc(10);
-
             display: flex;
             justify-content: center;
             align-items: center;
+            width: rem-calc(80);
+            padding: rem-calc(5) 0;
 
+            background-color: var(--green);
+            color: var(--black);
+            font-size: rem-calc(12);
             border-radius: rem-calc(50);
-
-            width: rem-calc(60);
-
-            margin-bottom: rem-calc(5);
+            text-transform: capitalize;
           }
         }
       }
 
       &__image {
         position: absolute;
-
         right: rem-calc(20);
         bottom: rem-calc(20);
 
@@ -65,13 +65,36 @@
         align-items: center;
         justify-content: center;
 
-        height: rem-calc(90);
         width: rem-calc(110);
+        height: rem-calc(90);
         background: url("../../../assets/bg/background-list-pokemons.svg")
-          no-repeat;
+          no-repeat center/contain;
+
+        transition: all 0.4s ease;
 
         img {
           width: rem-calc(60);
+          transition: transform 0.3s ease;
+        }
+      }
+
+      &:hover {
+        background-color: var(--orange);
+
+        .pokemon__status {
+          opacity: 0;
+        }
+
+        .pokemon__image {
+          top: 50%;
+          left: 50%;
+          right: auto;
+          bottom: auto;
+          transform: translate(-50%, -50%);
+        }
+
+        .pokemon__image img {
+          transform: scale(1.2); // Leve destaque ao hover
         }
       }
     }

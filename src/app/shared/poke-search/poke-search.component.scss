@@ -18,8 +18,13 @@
             font-size: rem-calc(20);
 
             &::placeholder{
-                color: white;
+                color: var(--white);
             }
         }
+    }
+
+    form:hover{
+        background: var(--orange);
+        transition: all 0.3s ease-in-out;
     }
 }

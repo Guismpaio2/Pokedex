@@ -15,9 +15,10 @@
 			padding: 0 rem-calc(30);
 
 			h1 {
-				color: var(--branco);
-				font-size: rem-calc(32);
+				color: var(--green);
+				font-size: rem-calc(40);
 				text-transform: capitalize;
+				z-index: 10;
 			}
 
 			h2 {
@@ -61,25 +62,27 @@
 				min-height: 43.9vh;
 				margin-top: rem-calc(10);
 
-				padding: rem-calc(110) rem-calc(35) rem-calc(30);
-				border-radius: rem-calc(50) rem-calc(50) 0 0;
+				padding: rem-calc(90) rem-calc(35) rem-calc(50) rem-calc(35);
+				border-radius: rem-calc(50);
 
 				h3 {
-					margin-bottom: rem-calc (20);
-					font-weight: 700;
+					font-weight: 800;
 					font-style: italic;
 					font-size: rem-calc(32);
 					text-decoration: underline;
-					color: var(--secondary-color);
+					margin-bottom: rem-calc(20);
+					color: var(--orange);
 				}
 
 				ol {
 					li {
 						display: flex;
 						justify-content: space-between;
-
-						font-size: rem-calc(18);
+						padding-left: rem-calc(20);
+						padding: rem-calc(5) 0;
+						font-size: rem-calc(20);
 						line-height: 130%;
+						border-bottom: 1px solid var(--gray);
 					}
 				}
 			}
