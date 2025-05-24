@@ -2,7 +2,7 @@
 
 :host {
 	main {
-		margin-top: rem-calc(40);
+		margin-top: rem-calc(100);
 
 		.pokemon__names {
 			position: relative;
@@ -72,6 +72,8 @@
 					text-decoration: underline;
 					margin-bottom: rem-calc(20);
 					color: var(--orange);
+					text-align: center;
+					
 				}
 
 				ol {
