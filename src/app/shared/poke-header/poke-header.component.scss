@@ -2,14 +2,97 @@
 
 :host {
   header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: rem-calc(20) 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: rem-calc(40) 0;
-    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.3s ease;
+
+    &.scrolled {
+      padding: rem-calc(10) 0;
+
+      .logo {
+        transform: scale(0.8);
+      }
+    }
   }
 
-  :hover {
-    transform: scale(1.1);
+  .logo {
+    max-height: rem-calc(60);
+    transition: transform 0.3s ease;
+    width: auto;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    display: inline-block;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+  }
+
+  .buttons {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 1rem;
+    z-index: 1100;
+  }
+
+  .btn_icon {
+    background-color: var(--red);
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    svg {
+      display: block;
+    }
+
+    &:hover {
+      background-color: var(--strong-purple);
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+/* Dark theme overrides */
+:root.dark-theme {
+  :host {
+    header {
+      background: rgba(18, 18, 18, 0.1);
+      backdrop-filter: blur(12px);
+
+      .logo {
+        background: rgba(255, 255, 255, 0.05);
+      }
+    }
+
+    .btn_icon {
+      background-color: var(--strong-purple);
+
+      &:hover {
+        background-color: var(--purple);
+      }
+    }
   }
 }
