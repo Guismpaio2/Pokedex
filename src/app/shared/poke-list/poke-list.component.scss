@@ -94,7 +94,32 @@
         }
 
         .pokemon__image img {
-          transform: scale(1.2); // Leve destaque ao hover
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+/* Dark theme overrides */
+:root.dark-theme {
+  :host {
+    .listagem {
+      .pokemon {
+        background-color: var(--gray);
+        color: var(--orange);
+
+        &__status li {
+          background-color: var(--blue);
+          color: var(--white);
+        }
+
+        &:hover {
+          background-color: var(--orange);
+
+          .pokemon__image img {
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+          }
         }
       }
     }

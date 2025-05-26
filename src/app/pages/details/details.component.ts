@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { forkJoin } from 'rxjs';
 
 //Services
-import { PokeApiService } from '../../service/poke-api.service';
+import { PokeApiService } from '../../shared/service/poke-api.service';
 
 @Component({
   selector: 'app-details',
