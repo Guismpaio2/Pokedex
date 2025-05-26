@@ -1,3 +1,24 @@
-<p>login works!</p>
+<div class="login-container">
+  <h2 class="login-title">Bem-vindo, Treinador!</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <input
+      formControlName="email"
+      type="email"
+      placeholder="Email.."
+      required
+    />
+    <input
+      formControlName="password"
+      type="password"
+      placeholder="Senha.."
+      required
+    />
+    <button type="submit">Entrar na Pokédex</button>
 
-<h1>Teste Teste</h1>
+    <div class="error_message" *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+  </form>
+
+  <img class="pikachu-img" src="../../../assets/pokemon.png" alt="Pikachu" />
+</div>

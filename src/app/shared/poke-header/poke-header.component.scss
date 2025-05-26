@@ -1,11 +1,15 @@
-@import '../../../config-scss/rem-calc.scss';
-
+@import "../../../config-scss/rem-calc.scss";
 
 :host {
-    header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: rem-calc(40) 0;
-    }
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: rem-calc(40) 0;
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  :hover {
+    transform: scale(1.1);
+  }
 }
